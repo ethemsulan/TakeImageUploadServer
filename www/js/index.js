@@ -85,7 +85,8 @@ function onCapturePhoto(fileURI) {
     options.mimeType = "image/jpeg";
     options.params = {}; // if we need to send parameters to the server request
     var ft = new FileTransfer();
-    ft.upload(fileURI, encodeURI("http://127.0.0.1/upload"), win, fail, options);
+    ft.upload(fileURI, encodeURI("http://localhost:8080/JAXRS-HelloWorld/rest/hello/upload"), win, fail, options);
+    
 };
  
 function capturePhoto() {
