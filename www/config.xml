@@ -7,9 +7,13 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
-    <feature name="Camera">
-    	<param name="com.phonegap.helloworld" value="org.apache.cordova.camera.CameraLauncher" />
-	</feature>
+    
+    <feature name="http://api.phonegap.com/1.0/camera" />
+    <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.media-capture" />
+    
+    
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
