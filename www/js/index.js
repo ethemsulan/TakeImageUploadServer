@@ -99,7 +99,7 @@ function onCapturePhoto(fileURI) {
  
 function capturePhoto() {
     navigator.camera.getPicture(onCapturePhoto, onFail, {
-        quality: 1,
+        quality: 0.01,
         destinationType: destinationType.FILE_URI
     });
 };
