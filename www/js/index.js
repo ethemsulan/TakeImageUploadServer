@@ -87,13 +87,13 @@ function onCapturePhoto(fileURI) {
     
     options.params = {}; // if we need to send parameters to the server request
     var ft = new FileTransfer();
-    // ft.upload(fileURI, encodeURI("http://10.0.1.61:8080/JAXRS-HelloWorld/rest/hello/upload"), win, fail, options);
+    ft.upload(fileURI, encodeURI("http://213.74.186.114:8181/JAXRS-HelloWorld/rest/hello/upload"), win, fail, options);
     
     // ft.upload(fileURI, encodeURI("http://10.0.1.61:8080/JavaWebService/SendImage"), win, fail, options);
-     $.post( "http://10.0.1.61:8080/JAXRS-HelloWorld/rest/hello/upload", {data: fileURI}, function(data) {
-        alert("Image uploaded!");
-      });
-};
+     // $.post( "http://213.74.186.114:8181/JAXRS-HelloWorld/rest/hello/upload", {data: fileURI}, function(data) {
+        // alert("Image uploaded!");
+      // });
+// };
  
 function capturePhoto() {
     navigator.camera.getPicture(onCapturePhoto, onFail, {
