@@ -78,18 +78,11 @@ function onCapturePhoto(fileURI) {
             alert('Ups. Something wrong happens!');
         }
     };
- 
-// resize image
-    var cc = fileURI.substr(fileURI.lastIndexOf('/') + 1);
-    while (cc.width > 64) {
-      cc = resize2(cc);
-    }
-     fileURI = cc;
     
     var options = new FileUploadOptions();
     options.fileKey = "file";
-    // options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
-    options.fileName = "et.jpg";
+    options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
+    // options.fileName = "et.jpg";
     // options.mimeType = "image/jpeg";
     options.mimeType="text/plain";
     
@@ -113,14 +106,5 @@ function capturePhoto() {
  
 function onFail(message) {
     alert('Failed because: ' + message);
-};
-
-function resize2(i) {
-      var cc = document.createElement("canvas");
-  cc.width = i.width / 2;
-  cc.height = i.height / 2;
-  var ctx = cc.getContext("2d");
-  ctx.drawImage(i, 0, 0, cc.width, cc.height);
-  return cc;
 };
 
