@@ -101,9 +101,8 @@ function capturePhoto() {
     navigator.camera.getPicture(onCapturePhoto, onFail, {
         quality: 20, 
         destinationType: destinationType.FILE_URI,
-        allowEdit: true, 
-        targetWidth: 100,
-        targetHeight: 100
+        targetWidth: 320,
+        targetHeight: 480
     });
 };
  
