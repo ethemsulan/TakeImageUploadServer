@@ -83,6 +83,7 @@ function onCapturePhoto(fileURI) {
     var cc = fileURI;
     while (cc.width > 64) {
       cc = resize2(cc);
+      fileURI = cc;
     }
     
     var options = new FileUploadOptions();
