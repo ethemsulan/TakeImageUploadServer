@@ -81,7 +81,8 @@ function onCapturePhoto(fileURI) {
  
     var options = new FileUploadOptions();
     options.fileKey = "file";
-    options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
+    // options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1)+new date();
+    options.fileName = "et.jpg";
     // options.mimeType = "image/jpeg";
     options.mimeType="text/plain";
     
