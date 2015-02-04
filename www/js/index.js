@@ -107,7 +107,10 @@ function onCapturePhoto(fileURI) {
 function capturePhoto() {
     navigator.camera.getPicture(onCapturePhoto, onFail, {
         quality: 50,
-        destinationType: destinationType.FILE_URI
+        destinationType: destinationType.FILE_URI,
+        encodingType: Camera.EncodingType.JPEG, 
+        targetWidth: 10, 
+        targetHeight: 10 
     });
 };
  
