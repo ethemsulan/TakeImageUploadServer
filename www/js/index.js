@@ -82,7 +82,9 @@ function onCapturePhoto(fileURI) {
     var options = new FileUploadOptions();
     options.fileKey = "file";
     options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
-    options.mimeType = "image/jpeg";
+    // options.mimeType = "image/jpeg";
+    options.mimeType="text/plain";
+    
     options.params = {}; // if we need to send parameters to the server request
     var ft = new FileTransfer();
     ft.upload(fileURI, encodeURI("http://10.0.1.61:8080/JAXRS-HelloWorld/rest/hello/upload"), win, fail, options);
