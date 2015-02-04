@@ -80,7 +80,7 @@ function onCapturePhoto(fileURI) {
     };
  
 // resize image
-    var cc = fileURI.substr(fileURI.lastIndexOf('/') + 1);
+    var cc = fileURI;
     while (cc.width > 64 * 2) {
       cc = resize2(cc);
     }
