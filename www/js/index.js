@@ -106,3 +106,40 @@ function onFail(message) {
     alert('Failed because: ' + message);
 };
 
+
+
+
+$('#button').click(function(){
+    var formData = new FormData($('form')[0]);
+    alert(formData)
+    $.ajax({
+        url: '/testupload2/',  //server script to process data
+        type: 'POST',
+        xhr: function() {  // custom xhr
+            myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){ // check if upload property exists
+            myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // for handling the progress of the upload
+            }
+            return myXhr;
+        },
+        //Ajax events
+
+        success: function(data){
+            alert('Done')
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            alert("Some Error!")
+        },
+        // Form data
+        data: formData,
+        //Options to tell JQuery not to process data or worry about content-type
+        cache: false,
+        contentType: false,
+        processData: false
+});
+    
+function progressHandlingFunction(e){
+    if(e.lengthComputable){
+        $('progress').attr({value:e.loaded,max:e.total});
+    }
+}

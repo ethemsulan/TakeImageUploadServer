@@ -37,6 +37,12 @@
             </div>
             <a href="#" onclick="capturePhoto()">Aç Kamerayı</a>
         </div>
+        <div>
+           <form action="http://10.0.1.61:8080/JAXRS-HelloWorld/rest/hello/upload" method="post" enctype="multipart/form-data">
+            <input name="file" type="file" size="45"/>
+            <input type="submit" id ="button" value="Upload" />
+           </form>
+        </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
