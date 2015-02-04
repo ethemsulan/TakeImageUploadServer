@@ -81,7 +81,7 @@ function onCapturePhoto(fileURI) {
  
 // resize image
     var cc = fileURI;
-    while (cc.width > 64 * 2) {
+    while (cc.width > 64) {
       cc = resize2(cc);
     }
     
